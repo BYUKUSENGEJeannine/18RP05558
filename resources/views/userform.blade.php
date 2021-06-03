@@ -4,7 +4,20 @@
 
     @csrf
 
+    <div class="row">
+
+<div class="col-xs-12 col-sm-12 col-md-12">
+
+    <div class="form-group">
+
+        <strong>idno:</strong>
+
+        <input type="text" name="idno" class="form-control" placeholder="idno">
+
+
   
+</div> 
+ </div>
 
      <div class="row">
 

@@ -1,11 +1,10 @@
 @extends('layouts.app')
-
 @section('content')
-<div class="container"  style='width:60%;top:2%;'>
+<div class="container"  style='width:50%;top:40%;'>
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Add New Donor</h2>
+                <h2>Add New citizen</h2>
             </div>
             
         </div>
@@ -23,6 +22,14 @@
     @endif
     <form action="{{ route('citizens.store') }}" method="POST" >
         @csrf
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>IDNO:</strong>
+                    <input type="text" name="idno" class="form-control" placeholder="idno">
+                </div>
+            </div>
     
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">

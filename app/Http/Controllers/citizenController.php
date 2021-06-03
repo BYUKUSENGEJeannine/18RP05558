@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\citizen;
-
+use App\Models\User;
 class citizenController extends Controller
 {
     /**
@@ -32,6 +32,9 @@ class citizenController extends Controller
     public function login(){
         return view('citizens.login');
     }
+    public function home(){
+        return view('citizens.home');
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -41,6 +44,7 @@ class citizenController extends Controller
     public function store(Request $request)
     {
          $request->validate([
+            'idno' => 'required',
             'fname' => 'required',
             'lname' => 'required',
             'gender' => 'required',
@@ -58,16 +62,21 @@ class citizenController extends Controller
             ->with('success', 'People Info  successfully Recorded.');
     }
 
-    /**
+
+
+/**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(citizen $citizen)
+
     {
-        //
-    }
+
+        return view('citizens.show',compact('citizen'));
+
+    } 
 
     /**
      * Show the form for editing the specified resource.
@@ -90,6 +99,7 @@ class citizenController extends Controller
     {
        
         $request->validate([
+            'idno'=>'required',
             'fname' => 'required',
             'lname' => 'required',
             'gender' => 'required',
@@ -116,11 +126,18 @@ class citizenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(citizen $citizen)
+
     {
-     $citizen->delete();
+
+        $citizen->delete();
+
+    
 
         return redirect()->route('citizens.index')
-            ->with('success', 'People successfully Removed');
-    }  
+
+                        ->with('success','citizen deleted successfully');
+
+    }
+
 }

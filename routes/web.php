@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\insertcontroller;
+//use App\Http\Controllers\insertcontroller;
 use App\Http\Controllers\citizenController;
+use App\Http\Controllers\UsersController;
+use Illuminate\Session\Middleware\AuthenticateSession;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +25,10 @@ Route::get('/', function () {
 
   
 //Route::get("insertcontroller",[insertcontroller::class,"adduser"]);
-
+Route::get('/register1',[UsersController::class,'register']);
+Route::get('/select',[UsersController::class,'select']);
+Route::post('/insertUser',[UsersController::class,'insertUser']);
 Route::resource('citizens',citizenController::class);
 Route::get('login',[citizenController::class,'login']);
+// Route::get('login',[citizenController::class,'home']);
 

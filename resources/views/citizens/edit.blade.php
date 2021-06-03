@@ -30,6 +30,14 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
+                    <strong>idno:</strong>
+                    <input type="text" name="idno" value="{{ $citizen->idno }}" class="form-control" placeholder="idno">
+                </div>
+            </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
                     <strong>Fname:</strong>
                     <input type="text" name="fname" value="{{ $citizen->fname }}" class="form-control" placeholder="fname">
                 </div>

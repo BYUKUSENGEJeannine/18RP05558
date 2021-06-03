@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>App Name - @yield('title')</title>
+    <title>Umuganda Iwacu - @yield('title')</title>
 
     <!-- Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
@@ -13,37 +13,23 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
     </script>
 
-    <style>
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: #9C27B0;
-            color: white;
-            height: 30px;
-            text-align: center;
-        }
+    
 
-    </style>
 <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body>
+
     @section('sidebar')
 
     @show
 
-    <div class="container">
+    <div class="container" width="800px"style=" position:absolute; top:150px; left:80px; ">
         @yield('content')
     </div>
     <div class="text-center footer">
 
-        <h4>The writer needs a job</h4>
-        <h4>+234 806 605 6233</h4>
-        <h4>kingsconsult001@gmail.com</h4>
 
     </div>
-</body>
+
 
 </html>

@@ -14,7 +14,7 @@ class citizen extends Model
 
 
     protected $fillable=[
-   
+        'idno',
     'fname',
     'lname',
     'gender',
