@@ -107,7 +107,8 @@ to run this system
 ==================
 for admin user
 ==============
--or use (coco@gmail.com as username and 1234567890 as password)
+-or use (coco22@gmail.com as username and password as password) and can bck to index using logout.
+note: after login admin can update ,select,insert user,delete and show the users
 for mudugudu user
 =================
 use his/her account created by admin to login then, make attendence other change according to his/her permission

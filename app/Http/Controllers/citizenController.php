@@ -33,7 +33,7 @@ class citizenController extends Controller
         return view('citizens.login');
     }
     public function home(){
-        return view('citizens.home');
+        return route('citizens.home');
     }
     /**
      * Store a newly created resource in storage.

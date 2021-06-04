@@ -163,16 +163,91 @@
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Message</a>
                                 <a class="dropdown-item" href="#">Settings</a>
-                                <a class="dropdown-item" href="#">Log Out</a>
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
+    <table class="table table-bordered table-responsive-lg" cellspacing="0" cellpadding="0" width="80%" style=" font-size:medium;margin-top:5%;">
+        <tr  class="btn-warning">
+            <th>No</th>
+            <th>ID Number</th>
+            <th>Fname</th>
+            <th>Lname</th>
+            <th>Gender</th>
+            <th>Status</th>
+            <th>Village</th>
+            <th>Cell</th>
+            <th>Sector</th>
+            <th>District</th>
+            <th width="300px"> Date Created</th>
+            <th width="300px">Action</th>
+            
+        </tr>
+        @foreach ($citizens as $citizen)
+            <tr>
+                <td>{{ ++$i }}</td>
+                <td>{{ $citizen->idno}}</td>
+                <td>{{ $citizen->fname }}</td>
+                <td>{{ $citizen->lname }}</td>
+                <td>{{ $citizen->gender }}</td>
+                <td>{{ $citizen->status}}</td>
+                <td>{{ $citizen->village}}</td>
+                <td>{{ $citizen->cell}}</td>
+                <td>{{ $citizen->sector}}</td>
+                <td>{{ $citizen->district}}</td>
+                <td>{{ date_format($citizen->created_at, 'jS M Y') }}</td>
+                <td>
+                <form action="{{ route('citizens.destroy',$citizen->id) }}" method="POST">
+
+   
+
+<a  href="{{ route('citizens.show',$citizen->id) }}"> <i class="fa fa-eye fa-lg"></i></a>
+
+
+
+<a  href="{{ route('citizens.edit',$citizen->id) }}"><i class="fa fa-edit fa-lg"></i></a>
+
+
+
+@csrf
+
+@method('DELETE')
+
+
+
+<button type="submit" ><i class="fa fa-remove text-danger"></i></button>
+
+</form>
+
+</td>
+
+</tr>
+
+@endforeach
+
+</table>
+
+
+
+{!! $citizens->links() !!}
+
+
             <!-- page title area end -->
             <div class="main-content-inner" >
                 <div class="container" style="position:absolute; width:2000px">
-                @extends('citizens.home')
+                
                     <!-- seo fact area start -->
                     
                    

@@ -52,13 +52,13 @@
 		<nav id="nav-wrap">
 		<ul id="main-menu" class="nav-bar sf-menu">
 			<li class="current">
-			<a href="{{route('citizens.create')}}">Home</a>
+			<a href="{{route('citizens.create')}}"></a>
 			<ul>
 				<li></li>
 			</ul>
 			</li>
 			<li>
-			<a href="login">Admin Login</a>
+			<a href="{{route('login')}}">Admin Login</a>
 			
 			</li>
 			<li>

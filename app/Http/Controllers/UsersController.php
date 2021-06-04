@@ -21,10 +21,7 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -72,24 +69,28 @@ class UsersController extends Controller
 
 
     }
-    public function insertUser(Request $request)
-    {
-        $request->validate([
-                
-                'name' => 'required',
-                'email' => 'required',
-                'password' => 'required',
-                'category' => 'required',
-                
-            ]);
-    
-            User::create($request->all());
-    
-            return redirect()->route('citizens.index')
-                ->with('success', 'People Info  successfully Recorded.');
-        
 
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'category' => ['required', 'string', 'max:255'],
+        ]);
     }
+    protected function create(array $data)
+    {
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'category' => $data['category'],
+        ]);
+        redirect()->route('citizens.index')
+        ->with('success', 'People Info  successfully Recorded.');
+    }
+
     public function select(){
         
         $users = User::latest()->paginate(5);
@@ -108,5 +109,7 @@ class UsersController extends Controller
     {
         //
     }
+ 
+
   
 }

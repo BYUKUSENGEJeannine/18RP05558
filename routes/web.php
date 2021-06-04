@@ -29,6 +29,15 @@ Route::get('/register1',[UsersController::class,'register']);
 Route::get('/select',[UsersController::class,'select']);
 Route::post('/insertUser',[UsersController::class,'insertUser']);
 Route::resource('citizens',citizenController::class);
-Route::get('login',[citizenController::class,'login']);
-// Route::get('login',[citizenController::class,'home']);
 
+
+// zzRoute::get('login',[citizenController::class,'home']);
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->String('category',16);
+            $table->String('category',16)->default('umudugudu');
             $table->rememberToken();
             $table->timestamps();
         });

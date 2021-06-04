@@ -1,23 +1,3 @@
-@extends('layouts.app')
-
-@section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>People Information </h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('citizens.create') }}" title="Create a project"> <i class="fas fa-plus-circle"></i>
-                    </a>
-            </div>
-        </div>
-    </div>
-
-    @if ($message = Session::get('success'))
-        <div class="alert alert-success">
-            <p>{{ $message }}</p>
-        </div>
-    @endif
 
     <table class="table table-bordered table-responsive-lg" cellspacing="0" cellpadding="0" style="width:1300px; font-size:15px">
         <tr  class="btn-warning">
@@ -83,6 +63,3 @@
 
 {!! $citizens->links() !!}
 
-
-
-@endsection
