@@ -114,6 +114,7 @@ note: after login admin can update ,select,insert user,delete and show the users
 
 -only admin and with its password which is match well can get permission to login.
 and other users like mudugudu who can want to make attendance.
+
 for mudugudu user
 =================
 use his/her account created by admin to login then, make attendence other change according to his/her permission
