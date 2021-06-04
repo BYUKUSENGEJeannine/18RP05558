@@ -84,7 +84,7 @@ mudugudu has to perform this action:
 -to send umuganda report to admin
 -to make same changes when it is needed like update only
 
-2.amdnin
+2.admin
 ========
 -view people attended umuganda 
 -view list of all citizens
@@ -107,8 +107,13 @@ to run this system
 ==================
 for admin user
 ==============
--or use (coco22@gmail.com as username and password as password) and can bck to index using logout.
+-or use (coco22@gmail.com as username and password as password) and can back to index using logout.
 note: after login admin can update ,select,insert user,delete and show the users
+
+-other users try to login which is not in the database can not get permission for login
+
+-only admin and with its password which is match well can get permission to login.
+and other users like mudugudu who can want to make attendance.
 for mudugudu user
 =================
 use his/her account created by admin to login then, make attendence other change according to his/her permission
